@@ -17,9 +17,33 @@ class APICall {
 
             do {
                 let returnedData = try JSONDecoder().decode([Main].self, from: data!)
+            
                 
-                print(returnedData[0].currentPrice ?? 0)
-                print(returnedData[0].athDate ?? "")
+                DispatchQueue.main.async {
+                    completion(returnedData)
+                }
+            } catch {
+                print(String(describing: error))
+            }
+        }
+            .resume()
+    }
+}
+
+
+class NewsAPICall {
+    func getAPI(completion: @escaping (NewsModel) -> ()) {
+        guard let url = URL(string: "https://newsapi.org/v2/everything?q=crypto&apiKey=4674f381cf3043189a309dadb8aaabd6" ) else {
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+
+            do {
+                let returnedData = try JSONDecoder().decode(NewsModel.self, from: data!)
+                print(returnedData)
+                    
+
 
                 DispatchQueue.main.async {
                     completion(returnedData)

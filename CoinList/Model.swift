@@ -16,7 +16,7 @@ struct Main: Codable, Hashable {
     let currentPrice: Double?
     let marketCap, marketCapRank: Int?
     let fullyDilutedValuation: Int?
-    let totalVolume: Int?
+    let totalVolume: Double?
     let high24H, low24H, priceChange24H, priceChangePercentage24H: Double?
     let marketCapChange24H, marketCapChangePercentage24H, circulatingSupply: Double?
     let totalSupply, maxSupply: Double?
@@ -66,3 +66,6 @@ enum Currency: String, Codable, Hashable {
     case eth = "eth"
     case usd = "usd"
 }
+
+
+

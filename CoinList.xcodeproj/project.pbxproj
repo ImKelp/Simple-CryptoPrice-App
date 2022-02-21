@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BB4C8F227C3EF2000779EB4 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB4C8F127C3EF2000779EB4 /* NewsModel.swift */; };
+		8BB4C8F427C3EF3F00779EB4 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB4C8F327C3EF3F00779EB4 /* NewsView.swift */; };
 		8BBC1F6827C29A5D00DC1ABC /* CoinListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1F6727C29A5D00DC1ABC /* CoinListApp.swift */; };
 		8BBC1F6A27C29A5D00DC1ABC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1F6927C29A5D00DC1ABC /* ContentView.swift */; };
 		8BBC1F6C27C29A6000DC1ABC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BBC1F6B27C29A6000DC1ABC /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8BB4C8F127C3EF2000779EB4 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		8BB4C8F327C3EF3F00779EB4 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		8BBC1F6427C29A5D00DC1ABC /* CoinList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BBC1F6727C29A5D00DC1ABC /* CoinListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListApp.swift; sourceTree = "<group>"; };
 		8BBC1F6927C29A5D00DC1ABC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,7 +105,9 @@
 				8BBC1F6727C29A5D00DC1ABC /* CoinListApp.swift */,
 				8BBC1F6927C29A5D00DC1ABC /* ContentView.swift */,
 				8BBC1F9127C29ACA00DC1ABC /* Model.swift */,
+				8BB4C8F127C3EF2000779EB4 /* NewsModel.swift */,
 				8BBC1F9327C29ADB00DC1ABC /* Controller.swift */,
+				8BB4C8F327C3EF3F00779EB4 /* NewsView.swift */,
 				8BBC1F6B27C29A6000DC1ABC /* Assets.xcassets */,
 				8BBC1F6D27C29A6000DC1ABC /* Preview Content */,
 			);
@@ -149,6 +155,8 @@
 			dependencies = (
 			);
 			name = CoinList;
+			packageProductDependencies = (
+			);
 			productName = CoinList;
 			productReference = 8BBC1F6427C29A5D00DC1ABC /* CoinList.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +229,10 @@
 				Base,
 			);
 			mainGroup = 8BBC1F5B27C29A5D00DC1ABC;
+			packageReferences = (
+				8B8B232A27C3CE4E00DC6647 /* XCRemoteSwiftPackageReference "StockCharts" */,
+				8B8B232F27C3E81400DC6647 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 8BBC1F6527C29A5D00DC1ABC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -266,7 +278,9 @@
 				8BBC1F9227C29ACA00DC1ABC /* Model.swift in Sources */,
 				8BBC1F6A27C29A5D00DC1ABC /* ContentView.swift in Sources */,
 				8BBC1F6827C29A5D00DC1ABC /* CoinListApp.swift in Sources */,
+				8BB4C8F427C3EF3F00779EB4 /* NewsView.swift in Sources */,
 				8BBC1F9427C29ADB00DC1ABC /* Controller.swift in Sources */,
+				8BB4C8F227C3EF2000779EB4 /* NewsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +627,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B8B232A27C3CE4E00DC6647 /* XCRemoteSwiftPackageReference "StockCharts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/denniscm190/StockCharts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		8B8B232F27C3E81400DC6647 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 8BBC1F5C27C29A5D00DC1ABC /* Project object */;
 }

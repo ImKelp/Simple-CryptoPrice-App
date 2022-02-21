@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     private enum Tab: Hashable {
         case chart
@@ -21,11 +22,17 @@ struct ContentView: View {
                 Text("Top 100")
                 Image(systemName: "bitcoinsign.circle")
             }
-            Test()
+            About()
                 .tag(1)
                 .tabItem {
                 Text("About")
                 Image(systemName: "questionmark.app")
+            }
+            NewsView()
+                .tag(2)
+                .tabItem {
+                Text("News")
+                Image(systemName: "newspaper")
             }
         }
     }
@@ -191,7 +198,7 @@ struct CoinDetailedData: View {
                     HStack {
                         Text("Circulating Supply")
                         Spacer()
-                        Text("\(coin.circulatingSupply ?? 0)")
+                        Text("\(coin.circulatingSupply ?? 0, specifier: "%.0f")")
                     }
                     HStack {
                         Text("Total Supply")
@@ -206,8 +213,7 @@ struct CoinDetailedData: View {
 }
 
 
-
-struct Test: View {
+struct About: View {
     var body: some View {
         VStack {
             List {
