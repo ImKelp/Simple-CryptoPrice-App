@@ -16,5 +16,5 @@ This app was solely made to that I can improve myself and gain a better understa
 ## What's New Screenshots
 
 <img src="https://user-images.githubusercontent.com/64978825/155035480-454aa8b8-b725-4cb7-ac4e-522bdb3cbbaa.png" width="252" height="540">|
-<img src="https://user-images.githubusercontent.com/64978825/155200208-ddb1325d-5b81-4a83-9082-8e37e5de8ef8.png" width="252" height="540">
+<img src="https://user-images.githubusercontent.com/64978825/155200935-a19a8395-a65a-475d-a0a4-09e0926459ae.png" width="252" height="540">
 
