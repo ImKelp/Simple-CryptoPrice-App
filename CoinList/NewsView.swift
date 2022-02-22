@@ -6,18 +6,19 @@
 //
 
 import SwiftUI
+import SafariServices
+
 
 struct NewsView: View {
     @State var news: NewsModel?
+
     let test: Article = Article.init(title: "loading...", description: "loading...", url: "loading...", urlToImage: "loading...")
     var body: some View {
         NavigationView {
-            List {
+            ScrollView {
                 ForEach((news?.articles) ?? [test], id: \.self) { item in
                     HStack {
                         VStack {
-                            Text("\(item.title ?? "")")
-                                .font(.headline)
                             AsyncImage(url: URL(string: "\(item.urlToImage ?? "")")) { image in
                                 image.resizable()
 
@@ -25,10 +26,24 @@ struct NewsView: View {
                                 ProgressView()
                             }
                                 .cornerRadius(20)
-                                .frame(width: 160, height: 100)
+                                .frame(width: 400, height: 300)
+                            Spacer()
+                            HStack {
+                                Text("\(item.title ?? "")")
+                                    .font(.headline)
+                                .frame(alignment: .leading)
+                                Link(destination: URL(string: "\(item.url ?? "")")!) {
+                                    Text("Visit Site")
+                                }
+                            }
+                            Text("\(item.description ?? "")")
+                                .font(.subheadline)
+                            Divider()
                         }
-                        Text("\(item.description ?? "")")
-                            .font(.subheadline)
+
+                            .onTapGesture {
+                            print("Hello World")
+                        }
                     }
                 }
                     .onAppear() {
@@ -37,9 +52,21 @@ struct NewsView: View {
                     }
                 }
             }
-            .navigationBarTitle("Crypto News")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden(true)
+                .navigationBarTitle("Crypto News")
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarBackButtonHidden(true)
+                .toolbar {
+                Button(action: {
+
+                    print("Reload")
+
+                    NewsAPICall().getAPI { (data) in
+                        self.news = data
+                    }
+                }) {
+                    Text("Reload")
+                }
+            }
         }
     }
 }

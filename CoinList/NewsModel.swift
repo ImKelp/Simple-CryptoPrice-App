@@ -26,3 +26,5 @@ struct Article: Codable, Hashable {
     let url: String?
     let urlToImage: String?
 }
+
+

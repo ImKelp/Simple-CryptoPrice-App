@@ -22,18 +22,24 @@ struct ContentView: View {
                 Text("Top 100")
                 Image(systemName: "bitcoinsign.circle")
             }
-            About()
-                .tag(1)
-                .tabItem {
-                Text("About")
-                Image(systemName: "questionmark.app")
-            }
             NewsView()
-                .tag(2)
+                .tag(1)
                 .tabItem {
                 Text("News")
                 Image(systemName: "newspaper")
             }
+            ExchangesView()
+                .tag(2)
+                .tabItem {
+                Text("Exchanges")
+                Image(systemName: "bag.fill")
+                }
+            About()
+                .tag(3)
+                .tabItem {
+                Text("About")
+                Image(systemName: "questionmark.app")
+                }
         }
     }
 }
@@ -83,10 +89,8 @@ struct MainView: View {
                 .toolbar {
                 Button(action: {
 
-                    print("Hello WOrld")
-
-                    APICall().getAPI { (data3) in
-                        self.data = data3
+                    APICall().getAPI { (data) in
+                        self.data = data
                     }
                 }) {
                     Text("Reload")
@@ -204,9 +208,9 @@ struct CoinDetailedData: View {
                         Text("Total Supply")
                         Spacer()
                         Text("\(coin.totalSupply ?? 0, specifier: "%.0f")")
-
                     }
                 }
+                
             }
         }
     }
